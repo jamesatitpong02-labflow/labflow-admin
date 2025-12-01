@@ -909,7 +909,7 @@ router.get('/monthly-sales', authenticateToken, async (req, res) => {
           } else if (patientRights.includes('เงินสด') || patientRights.includes('ชำระเงินเอง') || 
                      patientRights.includes('จ่ายเอง') || paymentMethod.includes('เงินสด') ||
                      patientRights.includes('ข้าราชการ') || patientRights.includes('รัฐวิสาหกิจ')) {
-            department = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา';
+            department = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ';
           } else if (visitObj.referringOrganization && 
                      (visitObj.referringOrganization.includes('โรงพยาบาล') || 
                       visitObj.referringOrganization.includes('คลินิก'))) {
@@ -918,7 +918,7 @@ router.get('/monthly-sales', authenticateToken, async (req, res) => {
             // Default department based on visitType or other criteria
             const visitType = visitObj.visitType || '';
             if (visitType.includes('ตรวจเลือด') || visitType.includes('Lab') || visitType.includes('ห้องปฏิบัติการ')) {
-              department = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา';
+              department = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ';
             } else if (visitType.includes('ตรวจสุขภาพ') || visitType.includes('รักษา')) {
               department = 'คลินิกเวชกรรมไชยารวมแพทย์';
             } else {
@@ -1140,7 +1140,7 @@ router.get('/department-sales', authenticateToken, async (req, res) => {
         } else if (patientRights.includes('เงินสด') || patientRights.includes('ชำระเงินเอง') || 
                    patientRights.includes('จ่ายเอง') || paymentMethod.includes('เงินสด') ||
                    patientRights.includes('ข้าราชการ') || patientRights.includes('รัฐวิสาหกิจ')) {
-          orderDepartment = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา';
+          orderDepartment = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ';
         } else if (visitObj.referringOrganization && 
                    (visitObj.referringOrganization.includes('โรงพยาบาล') || 
                     visitObj.referringOrganization.includes('คลินิก'))) {
@@ -1149,7 +1149,7 @@ router.get('/department-sales', authenticateToken, async (req, res) => {
           // Default department based on visitType or other criteria
           const visitType = visitObj.visitType || '';
           if (visitType.includes('ตรวจเลือด') || visitType.includes('Lab') || visitType.includes('ห้องปฏิบัติการ')) {
-            orderDepartment = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา';
+            orderDepartment = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ';
           } else if (visitType.includes('ตรวจสุขภาพ') || visitType.includes('รักษา')) {
             orderDepartment = 'คลินิกเวชกรรมไชยารวมแพทย์';
           } else {
@@ -1458,9 +1458,9 @@ router.get('/monthly-visits', authenticateToken, async (req, res) => {
           if (patientRights.includes('สปสช') || patientRights.includes('ประกันสังคม')) {
             department = 'สปสช.';
           } else if (patientRights.includes('เงินสด') || patientRights.includes('ชำระเงินเอง') || patientRights.includes('จ่ายเอง')) {
-            department = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา';
+            department = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ';
           } else if (patientRights.includes('ข้าราชการ')) {
-            department = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา';
+            department = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ';
           } else {
             department = 'คลินิกเวชกรรมไชยารวมแพทย์';
           }

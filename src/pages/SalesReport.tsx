@@ -162,7 +162,7 @@ const SalesReport = () => {
     // Extract department name from metric title
     let departmentName = null;
     if (metric.title.includes('คลินิกเทคนิคการแพทย์')) {
-      departmentName = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา';
+      departmentName = 'คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ';
     } else if (metric.title.includes('คลินิกเวชกรรมไชยารวมแพทย์')) {
       departmentName = 'คลินิกเวชกรรมไชยารวมแพทย์';
     } else if (metric.title.includes('สปสช')) {
@@ -229,20 +229,12 @@ const SalesReport = () => {
       iconColor: "text-success",
     },
     {
-      title: `ยอดขายคลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา (${formatMonthDisplay(selectedMonth)})`,
-      value: isLoading ? "กำลังโหลด..." : formatCurrency(departmentSales['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา'] || 0),
-      change: isLoading ? "กำลังโหลด..." : (departmentSales['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา'] || 0) > 0 ? "มีข้อมูล" : "ไม่มีข้อมูล",
-      changeType: (departmentSales['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา'] || 0) > 0 ? "positive" as const : "neutral" as const,
+      title: `ยอดขายคลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ (${formatMonthDisplay(selectedMonth)})`,
+      value: isLoading ? "กำลังโหลด..." : formatCurrency(departmentSales['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ'] || 0),
+      change: isLoading ? "กำลังโหลด..." : (departmentSales['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ'] || 0) > 0 ? "มีข้อมูล" : "ไม่มีข้อมูล",
+      changeType: (departmentSales['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ'] || 0) > 0 ? "positive" as const : "neutral" as const,
       icon: FlaskConical, // Laboratory/medical technology icon
       iconColor: "text-blue-600",
-    },
-    {
-      title: `ยอดขายคลินิกเวชกรรมไชยารวมแพทย์ (${formatMonthDisplay(selectedMonth)})`,
-      value: isLoading ? "กำลังโหลด..." : formatCurrency(departmentSales['คลินิกเวชกรรมไชยารวมแพทย์'] || 0),
-      change: isLoading ? "กำลังโหลด..." : (departmentSales['คลินิกเวชกรรมไชยารวมแพทย์'] || 0) > 0 ? "มีข้อมูล" : "ไม่มีข้อมูล",
-      changeType: (departmentSales['คลินิกเวชกรรมไชยารวมแพทย์'] || 0) > 0 ? "positive" as const : "neutral" as const,
-      icon: Stethoscope, // Medical clinic icon
-      iconColor: "text-primary",
     },
     {
       title: `ยอดขาย สปสช. (${formatMonthDisplay(selectedMonth)})`,
@@ -348,7 +340,7 @@ const SalesReport = () => {
         </div>
 
         {/* Sales Metrics - Enhanced with Gradient Backgrounds */}
-        <div className="grid mobile-grid-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid mobile-grid-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {salesMetrics.map((metric, index) => (
             <div key={index} className="group relative overflow-hidden bg-gradient-to-br from-white to-gray-50 border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 rounded-2xl ios-bounce" style={{animationDelay: `${index * 0.1}s`}}>
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-600/10"></div>

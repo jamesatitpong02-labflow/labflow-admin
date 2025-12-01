@@ -143,18 +143,10 @@ const RegistrationReport = () => {
       iconColor: "text-success",
     },
     {
-      title: `การตรวจคลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา (${formatMonthDisplay(selectedMonth)})`,
-      value: isLoading ? "กำลังโหลด..." : formatNumber(departmentVisits['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา'] || 0),
-      change: isLoading ? "กำลังโหลด..." : (departmentVisits['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา'] || 0) > 0 ? "มีข้อมูล" : "ไม่มีข้อมูล",
-      changeType: (departmentVisits['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ ไชยา'] || 0) > 0 ? "positive" as const : "neutral" as const,
-      icon: Users,
-      iconColor: "text-success",
-    },
-    {
-      title: `การตรวจคลินิกเวชกรรมไชยารวมแพทย์ (${formatMonthDisplay(selectedMonth)})`,
-      value: isLoading ? "กำลังโหลด..." : formatNumber(departmentVisits['คลินิกเวชกรรมไชยารวมแพทย์'] || 0),
-      change: isLoading ? "กำลังโหลด..." : (departmentVisits['คลินิกเวชกรรมไชยารวมแพทย์'] || 0) > 0 ? "มีข้อมูล" : "ไม่มีข้อมูล",
-      changeType: (departmentVisits['คลินิกเวชกรรมไชยารวมแพทย์'] || 0) > 0 ? "positive" as const : "neutral" as const,
+      title: `การตรวจคลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ (${formatMonthDisplay(selectedMonth)})`,
+      value: isLoading ? "กำลังโหลด..." : formatNumber(departmentVisits['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ'] || 0),
+      change: isLoading ? "กำลังโหลด..." : (departmentVisits['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ'] || 0) > 0 ? "มีข้อมูล" : "ไม่มีข้อมูล",
+      changeType: (departmentVisits['คลินิกเทคนิคการแพทย์ โปร อินเตอร์ แลบ'] || 0) > 0 ? "positive" as const : "neutral" as const,
       icon: Users,
       iconColor: "text-success",
     },
@@ -243,7 +235,7 @@ const RegistrationReport = () => {
         </div>
 
         {/* Visit Metrics - iOS Style */}
-        <div className="grid mobile-grid-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+        <div className="grid mobile-grid-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {visitMetrics.map((metric, index) => (
             <div key={index} className="ios-metric-card ios-bounce" style={{animationDelay: `${index * 0.1}s`}}>
               <MetricCard {...metric} />

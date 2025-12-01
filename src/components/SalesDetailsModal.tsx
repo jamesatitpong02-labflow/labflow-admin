@@ -166,7 +166,7 @@ export function SalesDetailsModal({ isOpen, onClose, title, value, paymentMethod
             </div>
             <div>
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                รายละเอียดยอดขาย
+                {isDepartmentView ? 'รายละเอียดหน่วยงาน' : 'รายละเอียดยอดขาย'}
               </span>
               {isLoading && <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 ml-2 inline-block"></div>}
             </div>
