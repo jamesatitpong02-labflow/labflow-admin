@@ -15,7 +15,7 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: FRONTEND_URL
-        value: https://labflow-admin.netlify.app
+        value: https://prointerlab-admin.netlify.app
       - key: PORT
         value: 10000
 

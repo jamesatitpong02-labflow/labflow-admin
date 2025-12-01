@@ -35,9 +35,11 @@ app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? [
         process.env.FRONTEND_URL || 'https://labflow-admin.netlify.app',
+        // Explicitly allow the current Netlify site
+        'https://prointerlab-admin.netlify.app',
+        // Legacy/alternate Netlify domains
         'https://labflowadmin.netlify.app',
-        'https://labflow2.netlify.app',
-        'https://labflow-admin-backend.onrender.com'
+        'https://labflow2.netlify.app'
       ] 
     : ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:8080'],
   credentials: true,
